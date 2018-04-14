@@ -1,3 +1,5 @@
+/*Pneumatic Beacon inputs by Keren Megory-Cohen*/
+
 #include <Wire.h>
 #include <PneuDuino.h>
 
@@ -70,8 +72,8 @@ void loop() {
   if (rPressure > 220) {
     air.in(rInput, RIGHT);
     r = map(rPressure, 190, 255, 0, 255);
-    Serial.print("R value: ");
-    Serial.println(r);
+    //Serial.print("R value: ");
+    //Serial.println(r);
   }
   
   else {
@@ -82,8 +84,8 @@ void loop() {
   if (gPressure > 220) {
     air.in(gInput, RIGHT);
     g = map(gPressure, 190, 255, 0, 255);
-    Serial.print("G value: ");
-    Serial.println(g);
+    //Serial.print("G value: ");
+    //Serial.println(g);
   }
   
   else {
@@ -94,12 +96,18 @@ void loop() {
   if (bPressure > 220) {
     air.in(bInput, RIGHT);
     b = map(bPressure, 190, 255, 0, 255);
-    Serial.print("B value: ");
-    Serial.println(b);
+    //Serial.print("B value: ");
+    //Serial.println(b);
   }
   
   else {
     air.out(bInput, RIGHT);
   }
+
+  Serial.print(r);
+  Serial.print(" ");
+  Serial.print(g);
+  Serial.print(" ");
+  Serial.println(b);
   
 }
